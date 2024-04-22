@@ -1,0 +1,11 @@
+<div class="nav-scroller py-1 mb-3 border-bottom">
+    <nav class="nav nav-underline ">
+        <a  class="nav-item nav-link link-body-emphasis" 
+        routerLink="/products/">All Products</a>
+        <a *ngFor="let category of categories" class="nav-item nav-link link-body-emphasis" 
+        routerLink="/products/category/{{category.id}}">{{category.name}} </a>
+        
+    </nav>
+  <app-carousel></app-carousel>
+
+</div>

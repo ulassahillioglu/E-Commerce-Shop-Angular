@@ -1,0 +1,75 @@
+<div class="limiter">
+<form #signupForm="ngForm" (ngSubmit)="signup(signupForm)">
+    <section class="vh-100 bg-image"
+        style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+                                
+
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="text" #username="ngModel" [(ngModel)]="model.username"
+                                            id="username" name="username" required
+                                            class="form-control form-control-lg" />
+                                        <label class="form-label" >Your Username</label>
+                                    </div>
+
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="email" #email="ngModel" [(ngModel)]="model.email" type="email"
+                                            id="email" name="email" required class="form-control form-control-lg" />
+                                        <label class="form-label" >Your Email</label>
+                                    </div>
+
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="password" #password="ngModel" [(ngModel)]="model.password"
+                                            type="password" id="pass" name="pass" required
+                                            class="form-control form-control-lg" />
+                                        <label class="form-label" >Password</label>
+                                    </div>
+
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="password" name="confirmPassword" id="confirmPass"
+                                            #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword"
+                                            class="form-control form-control-lg" />
+                                        <label class="form-label" >Repeat your password</label>
+                                        <div *ngIf="password.value !== confirmPassword.value && confirmPassword.touched"
+                                            class="text-danger">Passwords do not match</div>
+                                    </div>
+
+                                    <div class="form-check mb-4">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="form2Example3cg" />
+                                                <label class="form-check-label" for="form2Example3cg">
+                                                    I agree all statements in <a href="#!" class="text-body"><u>Terms of
+                                                            service</u></a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="alert alert-danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+                                    <div class="d-flex justify-content-center">
+                                        <button 
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                                    </div>
+
+                                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a
+                                            routerLink="/login" class="fw-bold text-body"><u>Login here</u></a></p>
+
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+</div>

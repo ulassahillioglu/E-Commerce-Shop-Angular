@@ -1,0 +1,27 @@
+.productbox{
+    padding: 15px;
+    width: 80%;
+    height: 80%;
+}
+
+.searchbar{
+ 
+    padding: 10px;
+}
+.page{
+    background-color: #e6e1e18e;
+    padding-left: 75px;
+}
+
+img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.text-truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  

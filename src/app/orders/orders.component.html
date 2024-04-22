@@ -1,0 +1,31 @@
+<div *ngIf="loading">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<ul class="list-group">
+    <li *ngFor="let product of products" class="list-group-item">
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img [src]="product.imageUrl" class="img-fluid rounded-start product-image" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#details-' + product.id" aria-expanded="false" aria-controls="details">Show Details</button>
+                        <div class="collapse" [id]="'details-' + product.id">
+                            <div class="card card-body stylish-card">
+                                <p class="product-description">{{product.description}}</p>
+                                <p class="product-price">{{product.price | currency:"USD":'symbol':"1.2-2"}}</p>
+                                <p class="purchase-date">Purchased on {{product.date_added | date: 'dd/MM/yyyy'}}</p>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+

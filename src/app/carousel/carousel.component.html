@@ -1,0 +1,23 @@
+
+
+<owl-carousel-o [options]="customOptions" class="owl-theme">
+
+    <ng-container *ngFor="let product of images">
+      <ng-template carouselSlide>
+        <div class="item">
+          <div class="card h-100">
+            <img class="card-img-top rounded" [src]="product.imageUrl" alt="Product Image">
+            <div class="carousel-caption d-none d-md-block alert alert-light">
+              <a [routerLink]="['/products/details', product.productId]"
+                class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <h5 class="card-title">{{ product.name }} now on sale!</h5>
+                <p class="card-text">Purchase for <strong>{{ product.price | currency: 'USD': 'symbol': '1.2-2' }}</strong></p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+  
+</owl-carousel-o>
+  

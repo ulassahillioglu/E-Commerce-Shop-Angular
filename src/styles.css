@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.css";
+@import "font-awesome/css/font-awesome.css";
+@import "alertifyjs/build/css/alertify.min.css";
+@import "alertifyjs/build/css/themes/bootstrap.min.css";
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import "bootstrap-icons/font/bootstrap-icons.min.css";

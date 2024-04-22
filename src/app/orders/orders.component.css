@@ -1,0 +1,105 @@
+
+.card-img-top {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+/* Styles for the loading spinner */
+.spinner-border {
+    color: #ff6b6b; /* Red color for the spinner */
+}
+
+/* Styles for the cards */
+.card {
+    background: linear-gradient(to right, #ff6b6b, #6b47ff); /* Gradient background */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Move card slightly up on hover */
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow effect on hover */
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    color: #ffffff; /* White color for the title */
+    font-size: 1.5rem; /* Larger font size */
+    font-weight: bold; /* Bold font */
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #ffffff; /* White color for the text */
+    font-size: 1.2rem; /* Slightly larger font size */
+    margin-bottom: 10px;
+}
+
+/* Styles for the purchase info */
+.text-body-secondary {
+    color: #ffffff; /* White color for the secondary text */
+    font-size: 1rem;
+}
+
+/* Overall styling */
+body {
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333333; /* Dark text color */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-image {
+    margin-top: 1vh;
+    margin-left: 1vh;
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    object-fit: cover ; /* Ensures the image maintains its aspect ratio */
+}
+.stylish-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.stylish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.product-description {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 20px;
+    color: #0617ff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.purchase-date {
+    font-style: italic;
+    color: #74df37;
+}
+

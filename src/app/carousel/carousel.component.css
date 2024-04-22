@@ -1,0 +1,30 @@
+.owl-carousel .owl-item {
+    margin-right: 0; /* Adjust as needed */
+  }
+  
+  .card {
+      margin: 10px;
+  }
+  
+  img{
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+  }
+
+.carousel-caption {
+    background-color: rgba(18, 209, 136, 0.5);
+    padding: 10px;
+    
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    color: rgb(255, 246, 122);
+}
+
+
+.caption{
+    margin-left: 30%;
+}
+

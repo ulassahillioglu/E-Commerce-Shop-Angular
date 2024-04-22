@@ -1,0 +1,158 @@
+/* Reset CSS */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+  }
+  
+  /* Container styles */
+  .limiter {
+	width: 100%;
+	margin: 0 auto;
+  }
+  
+  .container-login100 {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #f4f4f4;
+  }
+  
+  .wrap-login100 {
+	width: 100%;
+	max-width: 400px;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 50px;
+	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form styles */
+  .login100-pic {
+	text-align: center;
+	margin-bottom: 30px;
+  }
+  
+  .login100-pic img {
+	max-width: 100%;
+  }
+  
+  .login100-form-title {
+	font-family: Arial, sans-serif;
+	font-size: 24px;
+	color: #333;
+	text-align: center;
+	margin-bottom: 30px;
+  }
+  
+  .wrap-input100 {
+	position: relative;
+	width: 100%;
+	margin-bottom: 20px;
+  }
+  
+  .input100 {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	color: #666;
+	line-height: 1.2;
+	width: 100%;
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	transition: border-color 0.3s;
+  }
+  
+  .input100:focus {
+	/* Modify or remove the border color property */
+	border-color: #ccc; /* Change this to the desired border color or remove it */
+  }
+  
+  .focus-input100::before {
+	/* Remove or modify the background property */
+	background: none; /* Remove the blue line effect */
+  }
+  
+  .focus-input100::after {
+	/* Remove or modify the color property */
+	color: #999; /* Change this to the desired color or remove it */
+  }
+  
+  
+  .input100:focus + .focus-input100::before {
+	visibility: visible;
+	height: 100%;
+  }
+  
+  .input100:focus + .focus-input100::after {
+	color: #007bff;
+  }
+  
+  /* Button styles */
+  .login100-form-btn {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	color: #fff;
+	line-height: 1.2;
+	text-transform: uppercase;
+	width: 100%;
+	height: 50px;
+	border: none;
+	border-radius: 5px;
+	background: #007bff;
+	cursor: pointer;
+	transition: background 0.3s;
+  }
+  
+  .login100-form-btn:hover {
+	background: #0056b3;
+  }
+  
+  /* Additional styles */
+  .text-center {
+	text-align: center;
+  }
+  
+  .p-t-12 {
+	padding-top: 12px;
+  }
+  
+  .p-t-136 {
+	padding-top: 136px;
+  }
+  
+  .txt1 {
+	font-size: 14px;
+	color: #999;
+  }
+  
+  .txt2 {
+	font-size: 14px;
+	color: #007bff;
+	text-decoration: none;
+  }
+  
+  .txt2:hover {
+	text-decoration: underline;
+  }
+  
+  .alert-danger {
+	color: #721c24;
+	background-color: #f8d7da;
+	border-color: #f5c6cb;
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+  }
+  

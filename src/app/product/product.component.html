@@ -1,0 +1,38 @@
+<!-- <h3 *ngIf="products; else noProduct">{{title}}</h3> -->
+<app-category></app-category>
+
+<div class="form-group searchbar">
+  <div class="mb-3">
+    <input class="form-control" id="productName" placeholder="Enter your search text" [(ngModel)]="filterText" />
+    <div *ngIf="filterText" class="form-text">Search results for <strong>{{filterText}}</strong> </div>
+  </div>
+</div>
+
+
+<div class="row row-cols-md-3 g-4 page rounded">
+  <ng-template #noProduct>
+    <div class="alert alert-primary" role="alert">
+      No products available in this category
+    </div>
+  </ng-template>
+
+  <div class="col-md-4 mb-3 justify-content-evenly" *ngFor="let product of products | productFilter:filterText">
+
+    <div class="card productbox h-100 border-0 rounded">
+      <div class="d-flex justify-content-center">
+        <img [src]="product.imageUrl" class="card-img-top border border-cyan" alt="...">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}} - {{product.price | currency:"USD":'symbol':"1.2-2"}}</h5>
+        <p class="card-text"><span class="d-inline-block text-truncate"
+            style="max-width: 100%;">{{product.description}}</span></p>
+      </div>
+      <div class="card-footer d-flex flex-column flex-sm-row justify-content-center justify-content-sm-between align-items-center">
+        <a (click)="addToCart(product)" class="btn btn-primary text-white mb-2 mb-sm-0">Add to cart</a>
+        <a routerLinkActive="active" [routerLink]="['/products/details',product.id]" class="btn btn-secondary">Details</a>
+    </div>
+    
+
+    </div>
+  </div>
+</div>

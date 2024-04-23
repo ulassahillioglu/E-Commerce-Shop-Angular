@@ -17,7 +17,7 @@ export class DetailsService {
     if (productId) {
       newPath += "/" + productId + "/";
     }
-    console.log(newPath);
+    
     return this.http.get<Product>(newPath).pipe(
       tap(data => console.log(JSON.stringify(data) )),
       catchError(this.handleError)

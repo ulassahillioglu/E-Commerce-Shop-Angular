@@ -21,7 +21,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {}
   
-  
+  products = this.cartService.getCart()
 
   decrementQuantity(item: Product) {
     this.cartService.decrementQuantity(item);
@@ -59,8 +59,15 @@ export class CartComponent implements OnInit {
     });
     return total + this.deliveryCost;
   }
-
-  products = this.cartService.getCart();
+  
+  getTotal(){
+    let total_quantity = 0
+    
+    this.products.forEach((product) => {
+      total_quantity += product.quantity
+    })
+    return total_quantity
+  }
 
   isLoggedIn() {
     return this.accountService.isLoggedIn();

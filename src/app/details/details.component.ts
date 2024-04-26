@@ -1,11 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Product } from '../product/product';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { AlertifyService } from '../services/alertify.service';
 import { DetailsService } from '../services/details.service';
 import { CartService } from '../services/cart.service';
 import { FavoriteService } from '../services/favorite.service';
 import { FavProduct } from '../favorites/favProduct';
+import { AccountService } from '../services/account.service';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -26,12 +27,15 @@ export class DetailsComponent implements OnInit {
     userId: 0,
   };
   loading: boolean = true; // Add a loading flag
+  loggedIn = false
 
   cartService = inject(CartService);
   constructor(private detailsService: DetailsService,
               private activatedRoute: ActivatedRoute,
               private alertifyService: AlertifyService,
-              private favoritesService:FavoriteService) {}
+              private favoritesService:FavoriteService,
+            private accountService:AccountService,
+          private router:Router) {}
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -43,6 +47,10 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+
+  isLoggedIn(){
+    return this.accountService.isLoggedIn()
+  }
   createFavProduct(product:Product){
       this.favProduct.id = product.id
       this.favProduct.name = product.name
@@ -78,8 +86,13 @@ export class DetailsComponent implements OnInit {
   }
 
   addToFavs(product: FavProduct){
-    
+    if (this.isLoggedIn() == true){
     this.favoritesService.addToFavs(product)
+    }
+    else{
+      this.router.navigate(['/login']);
+
+    }
   }
 
   

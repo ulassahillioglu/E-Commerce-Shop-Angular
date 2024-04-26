@@ -37,14 +37,17 @@ export class FavoriteService implements OnInit {
   }
   addToFavs(product: FavProduct) {
     // Check if the product already exists in the frontend
-    if (this.products.some((p) => p.id === product.id)) {
-      const foundProduct = this.products.find((p) => p.id === product.id);
-      if (foundProduct) {
-        console.log(product.name + ' already in your favorites.');
-        return;
-      }
-    }
-
+    this.getFavs(product.userId).subscribe(
+      (favorites) => {
+        // Check if the product already exists in the user's favorites
+        console.log(product.userId)
+        console.log(favorites)
+        if (favorites.some((fav) => fav.name === product.name)) {
+          console.log(product.name + ' already in your favorites.');
+          this.alertifyService.warning(product.name + ' already in your favorites.');
+          return;
+        }
+    
 
     // Send product to backend
     this.addFavoriteProductToBackend(product).subscribe(
@@ -56,11 +59,13 @@ export class FavoriteService implements OnInit {
         console.error('Error adding product to backend:', error);
       }
     );
-  }
+  })
+}
   //////////////////////////////////////////////////////////////////////////////////////////
 
   ///Delete methods
   deleteFromFavs(product: FavProduct): Observable<FavProduct> {
+    
     return this.deleteFavoriteFromBackend(product).pipe(
       tap((response: FavProduct) => {
         console.log("Product removed from backend:", response);

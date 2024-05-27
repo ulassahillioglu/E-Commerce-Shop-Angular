@@ -1,2 +1,4 @@
-* linguist-detectable=true
 *.ts linguist-language=TypeScript
+*.scss linguist-detectable=true
+*.html linguist-detectable=true
+*.svg linguist-detectable=false
